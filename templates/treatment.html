@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Brain Tumor Detection</title>
+ <link rel="stylesheet" href="{{ url_for('static', filename='css/treatStyle.css') }}">
+</head>
+<body>
+ <header>
+    <nav class="navbar">
+      <div class="nav-logo">
+        <div class="logo"></div>
+      </div>
+      <ul class="list">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="treatment.html" class="working">Treatment</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+ </header>
+  
+ <main class="main-content">
+    <div class="upload-container">
+      <h1 class="title">Brain Tumor Detection</h1>
+      <h2 class="subtitle">Add MRI Scan:</h2>
+  
+      <div class="file-upload">
+        <label for="file-upload" class="upload-btn">Browse...</label>
+        <input id="file-upload" type="file" class="file-input" onchange="updateFileName()" />
+        <span id="file-name" class="file-name">No file selected</span>
+      </div>
+
+      <div class="image-preview-container" id="image-preview-container">
+        <img id="preview-selected-image" src="#" alt="Image Preview" />
+       </div>       
+  
+      <button id="upload-btn" class="upload-btn" onclick="uploadFile()">
+        PREDICT
+      </button>
+      <!-- Add an element for displaying the prediction result -->
+      <p id="prediction-result" style="margin-top: 10px;"></p>
+    </div>
+ </main>
+  
+ <script>
+  function updateFileName() 
+  {
+    const fileInput = document.getElementById('file-upload');
+    const fileNameDisplay = document.getElementById('file-name');
+    fileNameDisplay.textContent = fileInput.files.length > 0? fileInput.files[0].name : 'No file selected';
+
+    const previewImage = document.getElementById('preview-selected-image');
+    const previewContainer = document.getElementById('image-preview-container');
+    if (fileInput.files && fileInput.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            previewImage.src = e.target.result;
+            previewContainer.style.display = 'block';
+        }
+        reader.readAsDataURL(fileInput.files[0]);
+    } else {
+        previewImage.src = "";
+        previewContainer.style.display = 'none';
+    }
+}
+
+async function uploadFile() {
+    const fileInput = document.getElementById('file-upload');
+    if (fileInput.files.length === 0) {
+        alert('Please select a file first.');
+        return;
+    }
+
+    const formData = new FormData();
+    formData.append('file', fileInput.files[0]);
+
+    try {
+        const response = await fetch('/predict', {
+            method: 'POST',
+            body: formData
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error status: ${response.status}`);
+        }
+
+        const data = await response.text();
+        // Update the prediction result element with the response
+        document.getElementById('prediction-result').textContent = `Prediction: ${data}`;
+    } catch (error) {
+        console.error('Error uploading file:', error);
+        // Optionally, update the prediction result element with an error message
+        document.getElementById('prediction-result').textContent = 'Failed to upload the file.';
+    }
+}
+ </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/contactStyle.css') }}">
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+          <div class="nav-logo">
+            <div class="logo"></div>
+          </div>
+          <ul class="list">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="treatment.html">Treatment</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="contact.html" class="working">Contact</a></li>
+          </ul>
+        </div>
+      </header>
+    <div class="contact-container">
+        <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
+            <div class="contact-left-title">
+                <h2>Get In Touch</h2>
+                <hr>
+            </div>
+            <input type="hidden" name="access_key" value="2e877f41-8c5a-46b5-bcd7-f76fdd638125">
+            <input type="text" name="name" placeholder="Enter Your Name" class="contact-inputs" required>
+            <input type="email" name="email" placeholder="Your Mail ID" class="contact-inputs" required>
+            <textarea name="message" placeholder="Your Thoughts...." class="contact-inputs" cols="30" rows="10" required></textarea>
+            <button type="submit">SUBMIT</button>
+        </form>
+        <div class="contact-right">
+          <img src="{{ url_for('static', filename='img/mail.png') }}" alt="Mail Box">
+        </div>
+    </div>
+</body>
+</html>

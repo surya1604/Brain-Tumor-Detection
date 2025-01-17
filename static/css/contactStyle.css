@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #576f97;
+  }
+  
+  .navbar{
+    height: 70px;
+    background-color: #7e8db1;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    border-bottom: 2px solid #7e8db1;
+  }
+  
+  .logo{
+    background-image: url("/static/img/BTD logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100px;
+    width: 90px;
+    margin-top: 20px;
+  }
+  
+  .list{
+    list-style-type: none;
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .list li a {
+    text-decoration: none;
+    color: white;
+    transition: .3s ease;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
+  
+  .list li a:hover {
+    background-color: #576f97;
+    color: #7e8db1;
+  }
+  .list li a.working {
+    color: black; 
+  }
+  .list li a.working:hover {
+    color: black; 
+  }
+
+  .contact-container
+  {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+.contact-left
+{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 20px;
+}
+.contact-left-title h2
+{
+  font-weight: 600;
+  color: #d7e8ff;
+  font-size: 40px;
+  margin-bottom: 5px;
+}
+.contact-left-title hr
+{
+  border: none;
+  width: 120px;
+  height: 5px;
+  background-color: #d7e8ff;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.contact-inputs
+{
+  width: 400px;
+  height: 50px;
+  border: none;
+  outline: none;
+  padding-left: 25px;
+  font-weight: 500;
+  color: #475a72;
+  border-radius: 50px;
+}
+.contact-left textarea
+{
+  height: 140px;
+  padding-top: 15px;
+  border-radius: 20px;
+}
+.contact-inputs:focus
+{
+  border: 2px solid #442051;
+}
+.contact-inputs::placeholder
+{
+  color: #475a72;
+}
+.contact-left button
+{
+  display: flex;
+  align-items: center;
+  padding: 15px 30px;
+  font-size: 16px;
+  color: #d6dbe9;
+  gap: 10px;
+  border: none;
+  border-radius: 150px;
+  background: linear-gradient(270deg, #7c93b3, #314052);
+  cursor: pointer;
+}
+.contact-right img 
+{
+  width: 500px;
+}
+
+@media (max-width: 800px)
+{
+  .contact-inputs
+  {
+    width: 800vw;
+  }
+  .contact-right
+  {
+    display: none;
+  }
+}

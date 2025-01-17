@@ -1,0 +1,125 @@
+*{
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #576f97;
+}
+
+.navbar{
+  height: 70px;
+  background-color: #7e8db1;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  border-bottom: 2px solid #7e8db1;
+}
+
+.logo{
+  background-image: url("/static/img/BTD logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100px;
+  width: 90px;
+  margin-top: 20px;
+}
+
+.list{
+  list-style-type: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.list li a {
+  text-decoration: none;
+  color: white;
+  transition: .3s ease;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.list li a:hover {
+  background-color: #576f97;
+  color: #7e8db1;
+}
+.list li a.working {
+  color: black; 
+}
+.list li a.working:hover {
+  color: black; 
+}
+  
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px);
+    padding: 20px;
+   }
+   
+   .upload-container {
+    text-align: center;
+   }
+   
+   .title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+   }
+   
+   .subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+   }
+   
+   .file-upload {
+    margin-bottom: 20px;
+   }
+   
+   .image-preview-container {
+    display: none;
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+   
+   #preview-selected-image {
+    max-width: 100%;
+    max-height: 100%;
+   }
+   
+   
+   .upload-btn {
+    display: inline-block;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+   }
+   
+   .upload-btn:hover {
+    background-color: #444;
+   }
+   
+   .file-input {
+    display: none;
+   }
+   
+   .file-name {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #1c1919;
+   }
+  

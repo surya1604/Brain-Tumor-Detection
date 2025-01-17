@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brain Tumor Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/workStyle.css') }}">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="nav-logo">
+        <div class="logo"></div>
+      </div>
+      <ul class="list">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="treatment.html">Treatment</a></li>
+        <li><a href="work.html" class="working">Work</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="card">
+        <div class="face face1">
+            <div class="content">
+                <h2>Project Report</h2>
+            </div>
+        </div>
+        <div class="face face2">
+            <div class="content">
+              <a href="{{ url_for('static', filename='pdf/BrainTumorDetection_Report.pdf') }}" target="_blank">Click here to view the Project Report</a>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="face face1">
+            <div class="content">
+                <h2>Research Paper</h2>
+            </div>
+        </div>
+        <div class="face face2">
+            <div class="content">
+              <a href="{{ url_for('static', filename='pdf/RP.pdf') }}" target="_blank">Click here to view the Research Paper</a>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+      <div class="face face1">
+          <div class="content">
+              <h2>GitHub</h2>
+          </div>
+      </div>
+      <div class="face face2">
+          <div class="content">
+            <a href="https://github.com/surya1604/Minor-Project/tree/main" target="_blank">View GitHub Repository</a>
+          </div>
+      </div>
+  </div>
+  <div class="card">
+    <div class="face face1">
+        <div class="content">
+            <h2>Video</h2>
+        </div>
+    </div>
+    <div class="face face2">
+        <div class="content">
+            <video width="320" height="240" controls>
+                <source src="{{ url_for('static', filename='vid/vid1.mp4') }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+</div>
+
+
+
+  </div>
+</body>
+</html>

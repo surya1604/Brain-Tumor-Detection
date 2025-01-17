@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Tumor Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <div class="nav-logo">
+            <div class="logo"></div>
+        </div>
+        <ul class="list">
+            <li><a href="home.html" class="home working">Home</a></li>
+            <li><a href="treatment.html" class="treatment">Treatment</a></li>
+            <li><a href="work.html" class="work">Work</a></li>
+            <li><a href="contact.html" class="contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <section class="hero">
+        <div class="content">
+            <h1 class="title">BTD</h1>
+            <h2 class="subtitle">Brain Tumor Detection</h2>
+            <a href="#" class="button" id="readMoreBtn">Read More</a>
+        </div>
+    </section>
+
+    <section class="details" id="details" style="display: block;margin-left: 35px;margin-right: 30px;margin-top: 35px;margin-bottom: 35px;">
+        <div class="card-container">
+            <div class="card">
+                <h1>WHAT IS BRAIN TUMOR?</h1>
+                <h5>
+                    A brain tumor is an abnormal growth of cells in the brain.
+                    These tumors can be either benign (non-cancerous) or malignant (cancerous).
+                    They can develop from brain cells, or they can spread from other parts of the body to the brain (known as metastatic tumors).
+                    Brain tumors can interfere with normal brain function and may cause a variety of symptoms depending on their location and size, including headaches, seizures, changes in vision, and cognitive impairment.
+                    Treatment options for brain tumors include surgery, radiation therapy, chemotherapy, and targeted drug therapy.
+                </h5>
+            </div>
+            <div class="card">
+                <h1>TYPES</h1>
+                <h5>
+                    <ol>
+                        <li><b>Glioma:</b> These tumors originate from the glial cells, which are supportive cells in the brain. Gliomas include astrocytomas, oligodendrogliomas, and ependymomas.</li>
+                        <li><b>Meningioma:</b> These tumors develop in the meninges, the membranes that cover the brain and spinal cord.</li>
+                        <li><b>Pituitary:</b> These tumors form in the pituitary gland, which is located at the base of the brain and regulates hormone production.</li>
+                        <li><b>Metastatic:</b> These tumors originate from cancer cells that have spread (metastasized) to the brain from other parts of the body, such as the lungs, breast, or colon.</li>
+                    </ol>
+                </h5>
+            </div>
+            <div class="card">
+                <h1>SYMPTOMS</h1>
+                <h5>
+                    <ul>
+                        <li>Headaches, which may worsen over time and become more frequent</li>
+                        <li>Nausea or vomiting, especially in the morning</li>
+                        <li>Changes in vision, such as blurred or double vision</li>
+                        <li>Difficulty speaking or understanding language</li>
+                        <li>Weakness or numbness in the arms or legs</li>
+                        <li>Seizures</li>
+                        <li>Changes in personality or behavior</li>
+                        <li>Difficulty with balance or coordination</li>
+                        <li>Memory problems</li>
+                        <li>Increased pressure inside the skull, leading to symptoms such as drowsiness or confusion</li>
+                    </ul>
+                </h5>
+            </div>
+        </div>
+        <div class="button-container">
+            <a href="treatment.html" class="button">Detect</a>
+        </div>
+    </section>
+
+    <script>
+        var detailsSection = document.getElementById('details');
+        var readMoreBtn = document.getElementById('readMoreBtn');
+        var isDetailsVisible = false;
+
+        readMoreBtn.addEventListener('click', function(event) {
+            event.preventDefault();
+            isDetailsVisible = !isDetailsVisible; // Toggle visibility flag
+            detailsSection.style.display = isDetailsVisible ? 'block' : 'none'; // Toggle display property
+            if (isDetailsVisible) {
+                detailsSection.scrollIntoView({ behavior: 'smooth' }); // Scroll to section if it's visible
+            }
+        });
+    </script>
+</body>
+</html>
